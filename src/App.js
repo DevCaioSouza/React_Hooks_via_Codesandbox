@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    document.title = "React Hooks | useEffect";
+  }, []);
+
+  useEffect(() => {
+    alert("Valor do contador " + counter);
+  }, [counter]);
 
   const incrementCount = () => {
-    setCount(count + 1);
+    setCounter(counter + 1);
   };
 
   return (
     <div className="App">
       <h1>Contador</h1>
-      <h2>{count}</h2>
+      <h2>{counter}</h2>
       <button onClick={incrementCount}>Contar!</button>
     </div>
   );
 }
+
