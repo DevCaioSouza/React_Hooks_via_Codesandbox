@@ -1,6 +1,9 @@
 import {useState} from 'react';
 
 export default function RefAsCounter(){
+    //Nesse exemplo, faremos da forma menos apropriada, com useState
+    //dessa forma temos renderizações desnecessárias na aplicação
+    //que precisam ser repensadas
     const [counter, setCounter] = useState(0);
     
     function increaseCounter(){
@@ -19,4 +22,5 @@ export default function RefAsCounter(){
             <button onClick={showCounter}>Mostrar o número de clicks atual</button>
         </div>
     );
+    
 }
